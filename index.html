@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>cofferun</title>
+
+    <link rel="icon" href="img/otter2.jpg " type="image/x-icon"> <!--  иконка приложения в адресной строке -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"> <!-- подключили библиотеку стилей bootstrap -->
+
+    <style>
+      form: :focus:required:invalid {
+        border-color: #a94442;
+      }
+    </style>
+  </head>
+  <body class="container">
+
+  <header>
+    <h1>CoffeRun</h1>
+  </header>
+
+
+
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <div class="form-group">
+            <label for="coffeeOrder">Coffee Order</label>
+              <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
+          </div>
+
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+              <input type="email" name="emailAddress" value="" class="form-control" id="emailInput" value="" placeholder="example@mail.com" required>
+          </div>
+
+          <div class="radio">
+            <label for="">
+              <input type="radio" name="size" value="short">
+              Short
+            </label>
+          </div>
+          <div class="radio">
+            <label for="">
+              <input type="radio" name="size" value="tall" checked>
+              Tall
+            </label>
+          </div>
+          <div class="radio">
+            <label for="">
+              <input type="radio" name="size" value="grande">
+              Grande
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="flavorShot">Flavor Shot</label>
+              <select class="form-control" name="flavor" id="flavorShot">
+                <option value="">None</option>
+                <option value="caramel">Caramel</option>
+                <option value="almond">Almond</option>
+                <option value="mocha">Mocha</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="strengthLevel">Caffeine Rating</label>
+              <input type="range" name="strength" value="30" id="strengthLevel">
+          </div>
+
+          <button type="submit" name="" class="btn btn-default">Submit</button>
+          <button type="reset" name="" class="btn btn-default">Reset</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Pending Orders:</h4>
+          <div data-coffee-order="checklist"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/remotedatastore.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/validation.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/checklist.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/formhandler.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/datastore.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/truck.js"></script>
+  <script type="text/javascript" src="../coffeerun/scripts/main.js"></script>
+  </body>
+</html>
